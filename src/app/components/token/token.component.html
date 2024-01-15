@@ -1,0 +1,81 @@
+<div class="content">
+  <div class="card-login">
+    <div class="card-header bg-usco-vt header-usco-card">
+      <div class="row">
+        <div class="col">
+          <img
+            mat-card-image
+            src="assets/universidad-surcolombiana-multicampos-white.png"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+      <hr class="punteada" />
+      <div class="row">
+        <div class="col">
+          <small class="font-weight-bold text-white">
+            PLANTILLA WEB
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="card-body text-center font-usco-gr">
+      <div class="container">
+        <form>
+          <div class="row">
+            <div class="col">
+              <p>
+                Se ha enviado a su correo institucional <br />
+                (<b *ngIf="correo">{{ correo.correo }}</b
+                >) un codigo de verificación. <br />
+                Por favor ingresar a su correo, copia el codigo <br />
+                y diligenciar en el campo correspondiente.
+              </p>
+            </div>
+          </div>
+          <form [formGroup]="formToken">
+            <div class="row pl-5 pr-5">
+              <div class="col">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <span matPrefix class="p-3"
+                    ><i class="fa-solid fa-lock"></i
+                  ></span>
+                  <mat-label>Código de verificación</mat-label>
+                  <input matInput formControlName="token" autocomplete="off" />
+                </mat-form-field>
+              </div>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col mb-2">
+              <button
+                (click)="validarToken()"
+                type="button"
+                class="btn btn-usco-vt"
+                [disabled]="!formToken.valid"
+              >
+                Validar Token
+                <span
+                  *ngIf="cargando"
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <small
+                ><b class="version"
+                  >© {{ today | date : "yyyy" }} CITCD - Versión 2 Construcción
+                  1.0</b
+                ></small
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

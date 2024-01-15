@@ -1,0 +1,136 @@
+<div class="content">
+  <div class="card-login">
+    <div class="card-header bg-usco-vt header-usco-card">
+      <div class="row">
+        <div class="col">
+          <img
+            title="USCO"
+            mat-card-image
+            src="assets/universidad-surcolombiana-multicampos-white.png"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+      <hr class="punteada" />
+      <div class="row">
+        <div class="col">
+          <h6 class="font-weight-bold text-white">PLANTILLA WEB</h6>
+        </div>
+      </div>
+    </div>
+    <div class="card-body text-center font-usco-gr">
+      <div class="container">
+        <form [formGroup]="formLogin">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <span matPrefix class="p-3"
+                  ><i class="fa-solid fa-user"></i
+                ></span>
+                <mat-label>Usuario</mat-label>
+                <input
+                  matInput
+                  placeholder="Toque el botón 'i' para más información"
+                  autocomplete="off"
+                  formControlName="usuario"
+                  tabindex="1"
+                />
+                <!--  <button mat-icon-button matSuffix (click)="informacion()">
+                  <i class="fa-solid fa-circle-info"></i>
+                </button> -->
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <span matPrefix class="p-3"
+                  ><i class="fa-solid fa-lock"></i
+                ></span>
+                <mat-label>Contraseña</mat-label>
+                <input
+                  matInput
+                  [type]="ocultar ? 'password' : 'text'"
+                  formControlName="contrasenia"
+                  type="password"
+                  placeholder="Digite su clave"
+                  tabindex="2"
+                />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="ocultar = !ocultar"
+                  [attr.aria-label]="'Ocultar contraseña'"
+                  [attr.aria-pressed]="ocultar"
+                  tabindex="4"
+                >
+                  <mat-icon>{{
+                    ocultar ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mt-2 mb-2">
+              <button
+                (click)="login()"
+                type="submit"
+                class="btn btn-usco-vt"
+                tabindex="3"
+                [disabled]="!formLogin.valid"
+              >
+                Ingresar
+                <span
+                  *ngIf="cargando"
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mb-2">
+              <a href="https://www.usco.edu.co/cambio_clave/" target="_blank"
+                ><small class="font-usco-vt font-weight-bold"
+                  >¿Olvidó su contraseña?</small
+                ></a
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mb-2">
+              <small class="font-usco-vt font-weight-bold cursor-select"
+                ><a (click)="informacion()"
+                  ><i class="fa-solid fa-circle-info"></i> Tipos de Usuario</a
+                >
+                |
+                <spam
+                  [routerLink]="['/login']"
+                  routerLinkActive="router-link-active"
+                  ><i class="fa-solid fa-book"></i> Instructivo</spam
+                ></small
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mb-2">
+              <small
+                class="font-usco-vt font-weight-bold cursor-select"
+              ></small>
+            </div>
+          </div>
+          <div>
+            <small
+              ><b class="version"
+                >© {{ fachaActual | date : "yyyy" }} CITCD - Versión 1
+                Construcción 1.0</b
+              ></small
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
