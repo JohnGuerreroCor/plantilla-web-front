@@ -64,6 +64,11 @@
   border: solid 3px white;
 }
 
+/* Separador punteado */
+.item-usco {
+  border-left: 2px solid white;
+}
+
 .item-usco:hover {
   background-color: #222d32;
   color: white;

@@ -3,8 +3,8 @@ export class Usuario {
   username!: string;
   password!: string;
   personaCodigo!: number;
-  personaNombre!: String;
-  personaApellido!: String;
-  uaaNombre!: String;
+  personaNombre!: string;
+  personaApellido!: string;
   roles: string[] = [];
+  horaInicioSesion!: string;
 }

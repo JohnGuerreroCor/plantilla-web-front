@@ -49,7 +49,10 @@ export class LoginComponent implements OnInit {
 
     // Si el usuario ya ha iniciado sesión, redirigirlo a la página de inicio o de token según el caso
     if (this.authService.isAuthenticated()) {
-      if (this.authService.codigoverificacion != null) {
+      if (
+        this.authService.codigoverificacion != null &&
+        this.authService.Codigoverificacion
+      ) {
         // Mostrar un mensaje de notificación si ya se ha iniciado sesión con un token de verificación
         const Toast = swal.mixin({
           toast: true,

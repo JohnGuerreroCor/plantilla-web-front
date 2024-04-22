@@ -74,6 +74,13 @@
         >
       </li>
       <li class="nav-item item-usco active">
+        <a
+          class="nav-link font-usco-default cursor-select"
+          (click)="informacion()"
+          ><i class="fa-solid fa-circle-question"></i> Sesión</a
+        >
+      </li>
+      <li class="nav-item item-usco active">
         <a class="nav-link font-usco-default cursor-select" (click)="logout()"
           ><i class="fa-solid fa-door-open"></i> Cerrar Sesión</a
         >
@@ -89,3 +96,4 @@
   </div>
 </nav>
 <ng-content (validarToken)="receiveMessage($event)"></ng-content>
+<app-footer class="footer"></app-footer>

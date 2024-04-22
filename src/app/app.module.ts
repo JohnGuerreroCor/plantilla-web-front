@@ -15,6 +15,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { DatePipe } from '@angular/common';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import localeEsCO from '@angular/common/locales/es-CO';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 registerLocaleData(localeEsCO, 'es-CO');
 
@@ -25,6 +27,8 @@ registerLocaleData(localeEsCO, 'es-CO');
     LoginComponent,
     NavbarComponent,
     InicioComponent,
+    NotfoundComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
