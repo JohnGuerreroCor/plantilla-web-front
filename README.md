@@ -1,6 +1,6 @@
 # Plantilla Front - Módulos Web
 
-![Logo de la USCO](https://www.usco.edu.co/imagen-institucional/logo/universidad-surcolombiana.png)
+![Logo de la USCO](https://mega.nz/file/0FQBiTpS#CC2_LTZvYav1oaz2e7Mf_vgGzzc5Iv-ARhQ-FqCa0qg)
 
 Esta plantilla ha sido desarrollada utilizando las siguientes tecnologías:
 
