@@ -1,0 +1,78 @@
+<div class="content">
+  <div class="card-login">
+    <div class="card-header bg-usco-vt header-usco-card">
+      <div class="row">
+        <div class="col">
+          <img
+            mat-card-image
+            src="assets/universidad-surcolombiana-multicampos-white.png"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="card-body text-center font-usco-gr">
+      <div class="container">
+        <form>
+          <div class="row">
+            <div
+              class="col text-justify scrollable-div p-3"
+              (scroll)="onScroll($event.target)"
+              style="
+                border: solid #4d626c 1px;
+                border-radius: 5px;
+                background-color: #fcfcfc;
+              "
+            >
+              <small [innerHTML]="termino" style="font-size: 16px"> </small>
+            </div>
+          </div>
+          <div class="row mt-5 mb-2">
+            <div class="col text-justify">
+              <mat-checkbox [formControl]="disableSelect">
+                <small style="font-size: 13px">
+                  Autorizo de manera voluntaria e informada a la Universidad
+                  Surcolombiana para tratar mis datos personales, acorde con
+                  <a
+                    class="font-usco-vt"
+                    href="https://www.usco.edu.co/contenido/SGC-USCO/documentos/12.AP-CTR-GESTION-DE-CONTRATACION/AP-CTR-FO-26%20AUTORIZACION%20PARA%20EL%20TRATAMIENTO%20DE%20DATOS%20PERSONALES%20PROVEEDORES.pdf"
+                    target="_blank"
+                    ><u>
+                      La Política de Privacidad de Tratamiento de Datos
+                      Personales de la Universidad Surcolombiana</u
+                    ></a
+                  >
+                  y para recibir notificaciones sobre los trámites relacionados
+                  con su misión y funciones.</small
+                ></mat-checkbox
+              >
+            </div>
+          </div>
+          <div class="row" *ngIf="disableSelect.value">
+            <div class="col mt-2">
+              <button
+                type="button"
+                class="btn btn-usco-vt"
+                [disabled]="!isScrolledToBottom"
+                (click)="registrarAutorizacion()"
+                routerLinkActive="router-link-active"
+              >
+                Ingresar
+              </button>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col">
+              <small
+                ><b class="version"
+                  >© {{ today | date : "yyyy" }} CITCD - Versión 2 Construcción
+                  1.0</b
+                ></small
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

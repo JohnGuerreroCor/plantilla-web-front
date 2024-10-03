@@ -17,6 +17,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import localeEsCO from '@angular/common/locales/es-CO';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { AutorizacionDatosComponent } from './components/autorizacion-datos/autorizacion-datos.component';
 
 registerLocaleData(localeEsCO, 'es-CO');
 
@@ -29,6 +30,7 @@ registerLocaleData(localeEsCO, 'es-CO');
     InicioComponent,
     NotfoundComponent,
     FooterComponent,
+    AutorizacionDatosComponent,
   ],
   imports: [
     BrowserModule,

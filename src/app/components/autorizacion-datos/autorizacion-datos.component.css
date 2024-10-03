@@ -1,0 +1,48 @@
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.card-login {
+  background: white;
+  text-align: center;
+  border: 1px solid #a6b1b6;
+  border-radius: 15px;
+  -moz-box-shadow: 2px 2px 5px #999;
+  box-shadow: 5px 5px 15px #999;
+}
+
+.header-usco-card {
+  border-radius: 15px 15px 0px 0px;
+}
+
+.fondo {
+  background-color: #dbe0e2;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.scrollable-div {
+  width: 300px; /* Establece el ancho deseado para el div */
+  height: 300px; /* Establece la altura deseada para el div */
+  overflow: auto; /* Permite el desplazamiento dentro del div si el contenido excede su tamaño */
+}
+
+.mat-mdc-checkbox.mat-accent {
+  --mdc-checkbox-selected-checkmark-color: #fff;
+  --mdc-checkbox-selected-focus-icon-color: #8f141b;
+  --mdc-checkbox-selected-hover-icon-color: #8f141b;
+  --mdc-checkbox-selected-icon-color: #8f141b;
+  --mdc-checkbox-selected-pressed-icon-color: #8f141b;
+  --mdc-checkbox-unselected-focus-icon-color: #212121;
+  --mdc-checkbox-unselected-hover-icon-color: #212121;
+  --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.38);
+  --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
+  --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+}

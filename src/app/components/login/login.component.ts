@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Usuario } from '../../models/usuario';
 import swal from 'sweetalert2';
+import { TerminosCondicionesService } from 'src/app/services/terminos-condiciones.service';
 
 @Component({
   selector: 'app-login',
@@ -37,7 +38,8 @@ export class LoginComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public terminosCondicionesService: TerminosCondicionesService
   ) {
     // Inicializar el modelo de usuario
     this.usuario = new Usuario();
@@ -163,9 +165,16 @@ export class LoginComponent implements OnInit {
           icon: 'success',
           title: 'Inicio de sesión exitoso.',
         });
-
-        // Redirigir al usuario a la página de token según el valor del parámetro web
-        this.router.navigate(['/token']);
+        this.terminosCondicionesService
+          .verificarAutorizacion(this.authService.user.personaCodigo)
+          .subscribe((data) => {
+            if (data > 0) {
+              this.router.navigate(['/token']);
+            } else {
+              this.router.navigate(['/tratamiento-datos']);
+              1;
+            }
+          });
       },
       (err) => this.fError(err)
     );

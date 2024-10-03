@@ -5,6 +5,7 @@ export class Usuario {
   personaCodigo!: number;
   personaNombre!: string;
   personaApellido!: string;
+  uid!:number;
   roles: string[] = [];
   horaInicioSesion!: string;
 }

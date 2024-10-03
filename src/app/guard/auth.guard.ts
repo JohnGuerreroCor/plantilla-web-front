@@ -1,21 +1,36 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { TerminosCondicionesService } from '../services/terminos-condiciones.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  autorizacion!: any;
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private terminosCondicionesService: TerminosCondicionesService
+  ) {}
 
-  canActivate(): boolean {
+  async canActivate(): Promise<boolean> {
     if (
-      this.authService.Codigoverificacion &&
-      this.authService.user.personaCodigo
+      this.authService.user.personaCodigo &&
+      this.authService.Codigoverificacion
     ) {
-      return true;
+      this.autorizacion = await this.terminosCondicionesService
+        .verificarAutorizacion(this.authService.user.personaCodigo)
+        .toPromise();
+
+      if (this.autorizacion > 0) {
+        return true;
+      } else {
+        this.router.navigate(['/login']);
+        return false;
+      }
     } else {
-      this.router.navigate(['/login']); // Redirige a la página de inicio de sesión si el usuario no está autenticado
+      this.router.navigate(['/login']);
       return false;
     }
   }
