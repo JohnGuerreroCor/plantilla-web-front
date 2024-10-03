@@ -1,6 +1,6 @@
 # Plantilla Front - Módulos Web
 
-![Logo de la USCO](https://firebasestorage.googleapis.com/v0/b/doctoradocienciasdelasaludusco.appspot.com/o/universidad-surcolombiana.png?alt=media&token=d4ea33fa-940e-4581-9a1d-20c512221b99)
+![Logo de la USCO](https://www.usco.edu.co/imagen-institucional/logo/universidad-surcolombiana.png)
 
 Esta plantilla ha sido desarrollada utilizando las siguientes tecnologías:
 
